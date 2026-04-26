@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ValuationService } from '../service/valuation';
 
@@ -7,7 +7,7 @@ import { ValuationService } from '../service/valuation';
   selector: 'app-admin',
   templateUrl: './admin.html',
   styleUrl: './admin.css',
-  imports: [CommonModule]
+  imports: [CommonModule,RouterModule]
 })
 export class Admin implements OnInit {
 
