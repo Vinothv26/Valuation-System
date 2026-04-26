@@ -1,0 +1,67 @@
+<div class="login-container">
+
+  <!-- LEFT SIDE -->
+  <div class="left-panel d-none d-lg-flex flex-column justify-content-center">
+    <h1 class="fw-bold text-white">Valuation System</h1>
+    <p class="text-white-50 mt-2">
+      Manage property valuation for Admin, Engineers & Reports
+    </p>
+
+    <div class="mt-4">
+      <div class="feature">📊 Real-time valuation tracking</div>
+      <div class="feature">🏗 Site engineer data entry</div>
+      <div class="feature">📑 Automated reports</div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right-panel">
+
+    <div class="login-card shadow">
+
+      <h3 class="fw-bold mb-3">Login</h3>
+      <p class="text-muted small mb-4">Enter your credentials</p>
+
+      <form (ngSubmit)="onLogin()">
+
+        <!-- Username -->
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control"
+            [(ngModel)]="userName" name="username" required>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control"
+            [(ngModel)]="password" name="password" required>
+        </div>
+
+        <!-- Role Cards -->
+        <label class="role-card">
+          <input type="radio" name="role" value="admin" [(ngModel)]="role">
+          <span>🧑‍💼 Admin</span>
+        </label>
+
+        <label class="role-card">
+          <input type="radio" name="role" value="engineer" [(ngModel)]="role">
+          <span>👷 Engineer</span>
+        </label>
+
+        <label class="role-card">
+          <input type="radio" name="role" value="report" [(ngModel)]="role">
+          <span>📄 Report Maker</span>
+        </label>
+
+        <button class="btn btn-primary w-100 mt-3">
+          Login
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

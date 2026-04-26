@@ -1,0 +1,21 @@
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+}
+
+.main {
+  margin-left: 220px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+.sidebar a {
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.sidebar a:hover {
+  background: #495057;
+}

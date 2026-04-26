@@ -1,0 +1,32 @@
+<div class="d-flex">
+
+  <!-- Sidebar -->
+  <div class="sidebar bg-dark text-white p-3">
+    <h4 class="text-center mb-4">Admin Panel</h4>
+
+    <a routerLink="/admin" class="d-block text-white mb-2">Dashboard</a>
+    <a routerLink="/admin/users" class="d-block text-white mb-2">Users</a>
+    <a routerLink="/admin/valuation" class="d-block text-white mb-2">Valuation</a>
+    <a routerLink="/admin/reports" class="d-block text-white mb-2">Reports</a>
+  </div>
+
+  <!-- Main -->
+  <div class="main flex-grow-1">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-white shadow-sm px-3">
+      <span class="navbar-brand fw-bold">Valuation System</span>
+
+      <button class="btn btn-danger btn-sm" (click)="logout()">
+        Logout
+      </button>
+    </nav>
+
+    <!-- IMPORTANT -->
+    <div class="container mt-4">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>
