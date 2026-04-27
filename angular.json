@@ -46,10 +46,22 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
-          "builder": "@angular/build:dev-server"
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "vsdemo:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "vsdemo:build:production"
+            },
+            "development": {
+              "buildTarget": "vsdemo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
         }
       }
     }

@@ -1,30 +1,67 @@
 <div class="d-flex">
 
   <!-- Sidebar -->
-  <div class="sidebar bg-dark text-white p-3">
+  <div class="sidebar bg-dark text-white p-3" style="width: 220px; min-height: 100vh;">
     <h4 class="text-center mb-4">Admin Panel</h4>
 
     <a routerLink="/admin" class="d-block text-white mb-2">Dashboard</a>
-    <a routerLink="/admin/users" class="d-block text-white mb-2">Users</a>
     <a routerLink="/admin/valuation" class="d-block text-white mb-2">Valuation</a>
     <a routerLink="/admin/reports" class="d-block text-white mb-2">Reports</a>
   </div>
 
-  <!-- Main -->
+  <!-- Main Content -->
   <div class="main flex-grow-1">
 
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-white shadow-sm px-3">
       <span class="navbar-brand fw-bold">Valuation System</span>
 
-      <button class="btn btn-danger btn-sm" (click)="logout()">
-        Logout
-      </button>
+      
     </nav>
 
-    <!-- IMPORTANT -->
+    <!-- Content Area -->
     <div class="container mt-4">
+
+      <!-- ✅ Dashboard (ONLY for /admin) -->
+      <div *ngIf="router.url === '/admin' || router.url === '/admin/'">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="mb-0">Admin Dashboard</h3>
+
+   <button class="btn btn-danger btn-sm" (click)="logout()">
+      Logout
+    </button>
+  </div>
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card p-3 shadow-sm">
+              <h6>Total Properties</h6>
+              <h3>{{ totalProperties }}</h3>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card p-3 shadow-sm">
+              <h6>Engineers</h6>
+              <h3>{{ engineers }}</h3>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card p-3 shadow-sm">
+              <h6>Reports</h6>
+              <h3>{{ reports }}</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ✅ Child pages render here -->
       <router-outlet></router-outlet>
+
     </div>
 
   </div>

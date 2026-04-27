@@ -5,9 +5,10 @@ import { ValuationService } from '../service/valuation';
 
 @Component({
   selector: 'app-admin',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './admin.html',
-  styleUrl: './admin.css',
-  imports: [CommonModule,RouterModule]
+  styleUrl: './admin.css'
 })
 export class Admin implements OnInit {
 
@@ -18,7 +19,7 @@ export class Admin implements OnInit {
   valuationData: any[] = [];
 
   constructor(
-    private router: Router,
+    public router: Router,   // ✅ MUST be public (used in HTML)
     private service: ValuationService
   ) {}
 

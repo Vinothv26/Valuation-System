@@ -25,11 +25,10 @@ export class Login {
       return;
     }
 
-    // SIMPLE DEMO AUTH (no backend)
     const validUsers: any = {
       admin: { user: "Admin", pass: "1234", route: "/admin" },
-      engineer: { user: "Engineer", pass: "1234", route: "/engineer" },
-      report: { user: "Report", pass: "1234", route: "/report" }
+      engineer: { user: "Engineer", pass: "1234", route: "/site-engineer" },
+      report: { user: "Report", pass: "1234", route: "/report-maker" }
     };
 
     const selected = validUsers[this.role];
@@ -40,16 +39,12 @@ export class Login {
       this.password === selected.pass
     ) {
 
-      // store session
       localStorage.setItem("user", JSON.stringify({
         userName: this.userName,
         role: this.role
       }));
 
-      alert("Login successful");
-
-      // role-based navigation
-      this.router.navigate([selected.route]);
+      this.router.navigateByUrl(selected.route);
 
     } else {
       alert("Invalid credentials");
